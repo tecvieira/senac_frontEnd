@@ -1,0 +1,148 @@
+/* --- Reset Básico e Variáveis --- */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --cor0: #d9d9db;
+    --cor1: #b7ae8f;
+    --cor2: #978f84;
+    --cor3: #4a362f;
+    --cor4: #121210;
+}
+
+/* --- Estrutura Principal (Layout) --- */
+body {
+    display: flex;
+    flex-direction: column;
+    background: var(--cor0);
+    min-height: 100vh;
+    width: 100%;
+    /* Evita overflow horizontal desnecessário */
+}
+
+main {
+    flex: 1;
+    /* Faz o conteúdo crescer e empurrar o footer para baixo */
+    padding: 20px 0;
+    /* Adiciona um respiro vertical */
+}
+
+/* --- Navegação --- */
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--cor4);
+    padding: 20px;
+}
+
+nav li {
+    list-style: none;
+    font-size: 1.2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--cor0);
+    transition: color 0.3s ease;
+    /* Adiciona uma transição suave */
+}
+
+nav a:hover {
+    color: var(--cor2);
+}
+
+/* --- Cabeçalho --- */
+header {
+    text-align: center;
+    padding: 30px;
+    font-size: 1.3rem;
+}
+
+/* --- Conteúdo da Tabela --- */
+.tabela_um {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+table {
+    width: 90%;
+    /* Largura flexível */
+    max-width: 800px;
+    /* Largura máxima */
+    border-collapse: collapse;
+    /* Une as bordas das células */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil para destacar */
+}
+
+table th,
+table td {
+    border: 1px solid var(--cor2);
+    /* Borda definida no CSS */
+    padding: 12px 15px;
+    text-align: center;
+    vertical-align: middle;
+    /* Alinha o conteúdo verticalmente */
+}
+
+table th {
+    background-color: var(--cor3);
+    color: var(--cor0);
+    font-size: 1.1rem;
+}
+
+table td {
+    background-color: #ffffff;
+}
+
+/*Em CSS,
+:nth-child(even) seleciona todos os elementos filhos que possuem uma posição par (2º, 4º, 6º, etc.) em relação aos seus irmãos dentro do mesmo elemento pai. Essa pseudoclasse é útil para aplicar estilos de forma alternada,
+como em linhas de tabelas ou itens de lista,
+sem a necessidade de classes adicionais. Função: O seletor :nth-child() aplica estilos com base na posição de um elemento dentro de um conjunto de irmãos. even: É uma palavra-chave que significa "par" e seleciona os elementos em posições pares (2, 4, 6, etc.).*/
+
+table tr:nth-child(even) td {
+    background-color: #f8f8f8;
+    /* Cor de fundo alternada para melhor legibilidade */
+}
+
+table a {
+    text-decoration: none;
+    color: var(--cor4);
+    font-weight: bold;
+    transition: all 0.3s ease;
+    /* Transição suave para o hover */
+}
+
+table a:hover {
+    color: var(--cor3);
+    background-color: var(--cor1);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+img {
+    max-width: 100%;
+    /* Imagem se ajusta ao contêiner */
+    height: auto;
+    display: block;
+    /* Remove espaços extras abaixo da imagem */
+    margin: 0 auto;
+    /* Centraliza a imagem na célula */
+    max-height: 120px;
+    /* Limita a altura para manter a consistência */
+}
+
+/* --- Rodapé --- */
+.rodape {
+    margin-top: auto;
+    /* Garante que o rodapé fique no final */
+    padding: 15px;
+    text-align: center;
+    color: var(--cor2);
+    background: var(--cor4);
+}
