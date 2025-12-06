@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Vanderfish - Laboratório de Pesquisa Marinha</title>
+
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <img src="image/vanderfish_logo.png" alt="">
+        <ul>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#pesquisa">Pesquisas</a></li>
+            <li><a href="#preservacao">Preservação</a></li>
+            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <header>
+        <img src="image/mar_brasil.png" alt="Mar brasileiro">
+        <div class="titulo">Pesquisa e Preservação da Fauna Marinha Brasileira</div>
+    </header>
+
+    <!-- SOBRE -->
+    <section id="sobre">
+        <h2>Quem Somos</h2>
+        <p>
+            O Laboratório Vanderfish dedica-se ao estudo, monitoramento e preservação da fauna marinha brasileira.
+            Atuamos com foco científico, ambiental e educativo, contribuindo para um oceano mais sustentável e protegido.
+        </p>
+    </section>
+
+    <!-- PESQUISAS -->
+    <section id="pesquisa">
+        <h2>Linhas de Pesquisa</h2>
+        <div class="colunas">
+            <div class="box">
+                <h3>🐬 Mamíferos Marinhos</h3>
+                <p>Estudo de golfinhos, baleias, toninhas e efeitos do turismo no comportamento das espécies.</p>
+            </div>
+
+            <div class="box">
+                <h3>🐙 Ecossistemas de Coral</h3>
+                <p>Análises de saúde dos recifes, branqueamento e impactos do aquecimento global.</p>
+            </div>
+
+            <div class="box">
+                <h3>🐢 Tartarugas Marinhas</h3>
+                <p>Monitoramento de ninhos, rotas migratórias e ações de soltura e preservação.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRESERVAÇÃO -->
+    <section id="preservacao">
+        <h2>Programas de Preservação</h2>
+        <div class="colunas">
+            <div class="box">
+                <h3>🌱 Restauração de Recifes</h3>
+                <p>Plantio de corais e monitoramento de áreas em risco ambiental.</p>
+            </div>
+
+            <div class="box">
+                <h3>🚯 Combate ao Lixo Marinho</h3>
+                <p>Ações de limpeza costeira e educação comunitária contra o plástico.</p>
+            </div>
+
+            <div class="box">
+                <h3>🎓 Educação Ambiental</h3>
+                <p>Palestras, cursos e visitas guiadas com foco no respeito ao mar.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section id="galeria">
+        <h2>Fauna Marinha Brasileira</h2>
+        <div class="galeria">
+            <img src="image/tartaruga_marinha.jpg" alt="Tartaruga marinha">
+            <img src="image/golfinhos.jpg" alt="Golfinho">
+            <img src="image/baleias.jpg" alt="Baleia">
+            <img src="image/fish_brasil.jpg" alt="Peixes tropicais">
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato">
+        <h2>Contato</h2>
+        <form>
+            <input type="text" placeholder="Nome" required>
+            <input type="email" placeholder="E-mail" required>
+            <textarea placeholder="Mensagem"></textarea>
+            <button type="submit" class="btn">Enviar</button>
+        </form>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        © 2025 Vanderfish Laboratório Marinho — Protegendo o Oceano Brasileiro 🌊
+    </footer>
+
+    <!-- SCRIPT ANIMAÇÃO -->
+    <script>
+        const sections = document.querySelectorAll("section");
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("show"); });
+        }, { threshold: 0.2 });
+        sections.forEach(sec => observer.observe(sec));
+    </script>
+
+</body>
+</html>

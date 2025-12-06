@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #012d3e;
+    color: #e3faff;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: #02374a;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+nav img {
+    max-width: 100px;
+    border-radius: 10px;
+    box-shadow: 1px 2px solid rgb(177, 196, 197);
+}
+
+nav h1 {
+    color: #00c4ff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav li {
+    margin-left: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #e3faff;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #00c4ff;
+    transition: .3s;
+}
+
+/* HERO */
+header img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    filter: brightness(75%);
+}
+
+header .titulo {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.289);
+    padding: 20px 40px;
+    border-radius: 10px;
+    font-size: 32px;
+    text-align: center;
+}
+
+/* SEÇÕES */
+section {
+    padding: 60px 10%;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all .8s;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #00c4ff;
+}
+
+/* SOBRE */
+#sobre p {
+    max-width: 800px;
+    margin: auto;
+    font-size: 18px;
+    text-align: center;
+}
+
+/* PESQUISAS E PRESERVAÇÃO */
+.colunas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.box {
+    background-color: #024258;
+    padding: 25px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 0 8px #01191f;
+}
+
+.box h3 {
+    color: #00c4ff;
+    margin-bottom: 10px;
+}
+
+/* GALERIA */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+}
+
+.galeria img {
+    width: 100%;
+    border-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+    transition: .4s;
+    box-shadow: 0 0 10px #01191f;
+}
+
+.galeria img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 18px #00c4ff;
+}
+
+/* FORMULÁRIO */
+form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input,
+textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    background-color: #023645;
+    color: white;
+}
+
+textarea {
+    height: 120px;
+}
+
+.btn {
+    background-color: #00c4ff;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #011a21;
+}
+
+.btn:hover {
+    background-color: #3af0ff;
+}
+
+/* RODAPÉ */
+footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+    background-color: #02374a;
+    color: #e3faff;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 650px) {
+    nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    nav li {
+        margin: 8px 0;
+    }
+
+    header .titulo {
+        font-size: 22px;
+        padding: 15px 20px;
+        top: 50%;
+    }
+}
