@@ -1,0 +1,67 @@
+/* Variáveis para facilitar a manutenção e consistência das cores */
+:root {
+    --bg-body: #f0f0f0;
+    --text-color: #333;
+    --nav-bg-dark: rgb(53, 49, 80);
+    --nav-bg-light: rgb(174, 168, 218);
+    --white: #ffffff;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container-sobre-nav{
+    background-color: var(--nav-bg-dark);
+    width: 100%; /* 100% é mais seguro que 100vw para evitar rolagem horizontal */
+    height: 50px;
+}
+
+.zen-dots-regular {
+    font-family: "Zen Dots", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--white);
+    text-align: center;
+}
+
+.container-nav-list{ /* Correção de typo: comtainer -> container */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: var(--nav-bg-light);
+    list-style: none;
+
+}
+.container-nav-list li a{
+    text-decoration: none;
+    color: var(--white);
+    font-size: 20px;
+    font-weight: bold;
+    transition: opacity 0.3s ease; /* Suavidade na interação */
+    text-decoration: none;
+}
+
+.container-nav-list li a:hover {
+    opacity: 0.8; /* Feedback visual ao passar o mouse */
+    color:var(--text-color);
+}
+.container-main{
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
