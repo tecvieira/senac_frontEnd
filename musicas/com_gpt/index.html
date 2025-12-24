@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Fonte -->
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+
+    <title>My Music</title>
+
+    <style>
+        body {
+            background-color: #111;
+            color: #fff;
+            font-family: 'Zen Dots', cursive;
+        }
+
+        nav {
+            background: #000;
+            padding: 15px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            color: #0d6efd;
+        }
+
+        .card {
+            background: #1c1c1c;
+            border: none;
+            color: #fff;
+        }
+
+        .card img {
+            height: 180px;
+            object-fit: cover;
+        }
+
+        footer {
+            background: #000;
+            padding: 15px;
+            margin-top: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TÍTULO -->
+    <header class="text-center py-4">
+        <h1>🎵 My Music</h1>
+        <p>Minhas músicas favoritas</p>
+    </header>
+
+    <!-- MENU -->
+    <nav class="text-center">
+        <a href="#">Home</a>
+        <a href="#">Sobre</a>
+        <a href="#">Contato</a>
+    </nav>
+
+    <!-- PLAYER -->
+    <div class="container text-center my-4">
+        <audio id="player" controls class="w-100">
+            Seu navegador não suporta áudio.
+        </audio>
+
+        <button onclick="pararTudo()" class="btn btn-danger mt-3">
+            ⏹ Parar Tudo
+        </button>
+    </div>
+
+    <!-- CARDS -->
+    <div class="container">
+        <div class="row g-4 justify-content-center">
+
+            <!-- CARD 1 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="imagens/djroger_1.jpg" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5>Dj Roger</h5>
+                        <p>Charme Anos 90</p>
+                        <!-- precisa baixar as musicas em mp3 -->
+                        <button class="btn btn-primary" onclick="tocarMusica('musicas/musica1.mp3')">
+                            ▶ Ouvir
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="imagens/charm_antigas_vol2.jpg" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5>Charm das Antigas</h5>
+                        <p>Black Music</p>
+                        <!-- precisa baixar as musicas em mp3 -->
+                        <button class="btn btn-primary" onclick="tocarMusica('musicas/musica2.mp3')">
+                            ▶ Ouvir
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="imagens/bump_image_video.jpg" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5>Bump Bump Bump</h5>
+                        <p>Hip Hop 2000s</p>
+                        <!-- precisa baixar as musicas em mp3 -->
+                        <button class="btn btn-primary" onclick="tocarMusica('musicas/musica3.mp3')">
+                            ▶ Ouvir
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer>
+        © 2025 - Projeto Escolar My Music
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        const player = document.getElementById("player");
+
+        function tocarMusica(arquivo) {
+            player.src = arquivo;
+            player.play();
+        }
+
+        function pararTudo() {
+            player.pause();
+            player.currentTime = 0;
+        }
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

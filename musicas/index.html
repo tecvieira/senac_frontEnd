@@ -92,6 +92,7 @@
             // Abre a nova música e armazena a referência
             janelaMusica = window.open(url, "janelaMusica");
         }
+        
 
         function pararMusica() {
             // Tenta recuperar a referência da janela caso tenha sido perdida
@@ -100,6 +101,7 @@
             }
 
             if (janelaMusica) {
+                
                 janelaMusica.close();
                 janelaMusica = null; // Limpa a referência
             } else {
