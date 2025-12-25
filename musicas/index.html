@@ -34,6 +34,11 @@
 
     </main>
     <div class="container text-center">
+        <div id="video-container" class="mb-3" style="display: none;">
+            <div class="ratio ratio-16x9" style="max-width: 800px; margin: 0 auto;">
+                <iframe id="music-iframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
         <button style="background-color: red; color: white;" onclick="pararMusica()" class="btn mb-3">Parar
             Tudo</button>
         <div class="row">
@@ -43,7 +48,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Dj. Roger</h5>
                         <p class="card-text">CHARME ANOS 90, O MELHOR DO BLACK MUSIC, AS MAIS TOCADAS NOS BAILES</p>
-                        <button onclick="abrirMusica('https://music.youtube.com/watch?v=304rYAciBik')"
+                        <button onclick="abrirMusica('https://www.youtube.com/watch?v=304rYAciBik&list=RD304rYAciBik&start_radio=1')"
                             class="btn btn-primary">Ouvir</button>
                     </div>
                 </div>
@@ -55,7 +60,7 @@
                         <h5 class="card-title">Charm das Antigas vol.2</h5>
                         <p class="card-text">O melhor do black music</p>
                         <button
-                            onclick="abrirMusica('https://music.youtube.com/watch?v=ADfjQ-eaKpk&list=PLw97IOt2ULJmHMey_xiMs8aeewT_CSEk9')"
+                            onclick="abrirMusica('https://www.youtube.com/watch?v=ADfjQ-eaKpk&list=PLw97IOt2ULJmHMey_xiMs8aeewT_CSEk9')"
                             class="btn btn-primary">Ouvir</button>
                     </div>
                 </div>
@@ -67,7 +72,7 @@
                         <h5 class="card-title">Bump, Bump, Bump</h5>
                         <p class="card-text">Oficial Music vídeo</p>
                         <button
-                            onclick="abrirMusica('https://music.youtube.com/watch?v=CgiX53hjAPc&list=RDAMVMj463sClOEzk')"
+                            onclick="abrirMusica('https://www.youtube.com/watch?v=CgiX53hjAPc&list=RDAMVMj463sClOEzk')"
                             class="btn btn-primary">Ouvir</button>
                     </div>
                 </div>
@@ -81,32 +86,39 @@
 
 
     <script>
-        let janelaMusica = null;
-
         function abrirMusica(url) {
-            // Se já houver uma janela aberta, fechamos antes de abrir a próxima
-            if (janelaMusica && !janelaMusica.closed) {
-                janelaMusica.close();
-            }
+            try {
+                const urlObj = new URL(url);
+                const videoId = urlObj.searchParams.get("v");
+                const listId = urlObj.searchParams.get("list");
 
-            // Abre a nova música e armazena a referência
-            janelaMusica = window.open(url, "janelaMusica");
+                if (!videoId) {
+                    alert("Vídeo inválido");
+                    return;
+                }
+
+                let embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+
+                if (listId) {
+                    embedUrl += `&list=${listId}`;
+                }
+
+                const container = document.getElementById("video-container");
+                const iframe = document.getElementById("music-iframe");
+
+                iframe.src = embedUrl;
+                container.style.display = "block";
+            } catch (e) {
+                alert("URL inválida");
+            }
         }
 
-
         function pararMusica() {
-            // Tenta recuperar a referência da janela caso tenha sido perdida
-            if (!janelaMusica) {
-                janelaMusica = window.open("", "janelaMusica");
-            }
+            const container = document.getElementById("video-container");
+            const iframe = document.getElementById("music-iframe");
 
-            if (janelaMusica) {
-
-                janelaMusica.close();
-                janelaMusica = null; // Limpa a referência
-            } else {
-                alert("Nenhuma música está aberta no momento.");
-            }
+            iframe.src = "";
+            container.style.display = "none";
         }
     </script>
 
