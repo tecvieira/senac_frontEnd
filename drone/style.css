@@ -55,3 +55,20 @@ nav ul li a{
     justify-content: space-around;
     margin: 20px;
 }
+
+.section-cursos{
+    padding: 50px 0;
+    background-color: #ffffff;
+}
+
+.section-tour{
+    padding: 50px 0;
+    background-color: #ffffff;
+}
+
+footer{
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    margin-top: 20px;
+}
